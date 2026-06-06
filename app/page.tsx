@@ -130,8 +130,8 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <h1 className="font-display text-xl font-bold tracking-tight">
-                <span className="text-coral">N</span>
-                <span className="text-white">OVELA</span>
+                <span className="text-coral">Versa</span>
+                <span className="text-white"> TV</span>
               </h1>
               {/* LIVE indicator */}
               <div className="flex items-center gap-1.5 pl-1">
@@ -154,8 +154,8 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 z-30 px-4 pt-3 pb-2 glass border-b border-white/[0.04]">
           <div className="flex items-center justify-between">
             <h1 className="font-display text-xl font-bold tracking-tight">
-              <span className="text-coral">N</span>
-              <span className="text-ink">OVELA</span>
+              <span className="text-coral">Versa</span>
+              <span className="text-ink"> TV</span>
             </h1>
             <UserControl user={user} variant="default" onSignIn={() => setShowAuth(true)} />
           </div>

@@ -77,10 +77,10 @@ function ConfettiParticles() {
               height: size,
               background:
                 i % 3 === 0
-                  ? "#E9C682"
+                  ? "#FFAB00"
                   : i % 3 === 1
-                  ? "#FF3D6E"
-                  : "#34d399",
+                  ? "#6C5CE7"
+                  : "#00D2FF",
               opacity: 0,
               animation: `confetti-up ${dur}s ${delay}s ease-out forwards`,
             }}
@@ -107,7 +107,7 @@ function CharCountRing({ count, max }: { count: number; max: number }) {
   const circ = 2 * Math.PI * r;
   const offset = circ - pct * circ;
   const color =
-    pct > 0.9 ? "#FF3D6E" : pct > 0.7 ? "#E9C682" : "#9A93A6";
+    pct > 0.9 ? "#6C5CE7" : pct > 0.7 ? "#FFAB00" : "#9A93A6";
 
   return (
     <div className="flex items-center gap-2">

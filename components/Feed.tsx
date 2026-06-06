@@ -12,9 +12,9 @@ interface FeedProps {
 /* ---- Skeleton shimmer card ---- */
 function FeedSkeleton() {
   return (
-    <div className="snap-card relative w-full h-dvh flex-shrink-0 bg-[#0A0A0F]">
+    <div className="snap-card relative w-full h-dvh flex-shrink-0 bg-[#07070e]">
       {/* Shimmer background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#14141C] via-[#1E1E2A] to-[#14141C] bg-[length:200%_100%] animate-[shimmer_2s_linear_infinite]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#101020] via-[#1a1a30] to-[#101020] bg-[length:200%_100%] animate-[shimmer_2s_linear_infinite]" />
       {/* Bottom panel skeleton */}
       <div className="absolute bottom-0 left-0 right-16 p-4 pb-24 space-y-3">
         <div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ export default function Feed({ episodes }: FeedProps) {
           }`}
         >
           <div
-            className={`w-5 h-5 border-2 border-[#FF3D6E] border-t-transparent rounded-full ${
+            className={`w-5 h-5 border-2 border-[#6C5CE7] border-t-transparent rounded-full ${
               isRefreshing ? "animate-spin" : ""
             }`}
             style={{
@@ -201,7 +201,7 @@ export default function Feed({ episodes }: FeedProps) {
                 : `rotate(${pullDistance * 4}deg)`,
             }}
           />
-          <span className="text-xs text-[#9A93A6] font-body">
+          <span className="text-xs text-[#8b8aa0] font-body">
             {isRefreshing
               ? "Refreshing..."
               : pullDistance > 60

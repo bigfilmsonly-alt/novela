@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
       },
       business_profile: {
         name: channelName,
-        product_description: `AI-hosted channel on NOVELA: ${channelName}`,
+        product_description: `AI-hosted channel on Versa TV: ${channelName}`,
       },
     });
 

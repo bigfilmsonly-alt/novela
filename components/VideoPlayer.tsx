@@ -131,7 +131,7 @@ export default function VideoPlayer({
   if (!src) {
     const hasPoster = !!posterUrl;
     return (
-      <div className="absolute inset-0 overflow-hidden bg-[#0A0A0F]">
+      <div className="absolute inset-0 overflow-hidden bg-[#07070e]">
         {/* Background: poster image or gradient */}
         {hasPoster ? (
           <img
@@ -255,12 +255,12 @@ export default function VideoPlayer({
           <div className="w-full h-[3px] bg-white/10 group-hover:h-[5px] transition-all duration-200 relative">
             {/* Filled portion */}
             <div
-              className="absolute top-0 left-0 h-full bg-[#FF3D6E] transition-[width] duration-200"
+              className="absolute top-0 left-0 h-full bg-[#6C5CE7] transition-[width] duration-200"
               style={{ width: `${progressPercent}%` }}
             />
             {/* Scrubber dot */}
             <div
-              className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#FF3D6E] shadow-lg shadow-[#FF3D6E]/30 transition-opacity duration-200 ${
+              className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#6C5CE7] shadow-lg shadow-[#6C5CE7]/30 transition-opacity duration-200 ${
                 isDragging ? "opacity-100 scale-125" : "opacity-0 group-hover:opacity-100"
               }`}
               style={{ left: `calc(${progressPercent}% - 6px)` }}

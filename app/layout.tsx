@@ -2,15 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NOVELA — AI Vertical Micro-Dramas",
+  title: "Versa TV — AI Vertical Micro-Dramas",
   description:
     "Binge-worthy AI micro-dramas in your pocket. Swipe through cinematic vertical stories, chat with an AI host, remix in the studio, and discover creator channels — all powered by next-gen AI.",
   openGraph: {
-    title: "NOVELA — AI Vertical Micro-Dramas",
+    title: "Versa TV — AI Vertical Micro-Dramas",
     description:
       "Binge-worthy AI micro-dramas in your pocket. Swipe through cinematic vertical stories, chat with an AI host, remix in the studio, and discover creator channels.",
     type: "website",
-    siteName: "NOVELA",
+    siteName: "Versa TV",
   },
 };
 
@@ -19,7 +19,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   viewportFit: "cover",
-  themeColor: "#0A0A0F",
+  themeColor: "#07070e",
 };
 
 export default function RootLayout({

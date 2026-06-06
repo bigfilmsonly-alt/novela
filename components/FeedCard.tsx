@@ -91,7 +91,7 @@ export default function FeedCard({
     if (navigator.share) {
       try {
         await navigator.share({
-          title: drama?.title || "Check this out on NOVELA",
+          title: drama?.title || "Check this out on Versa TV",
           text: episode.synopsis,
           url: window.location.href,
         });
@@ -107,7 +107,7 @@ export default function FeedCard({
         key={i}
         className={`h-[3px] rounded-full transition-all duration-500 ${
           i === episode.episode_number
-            ? "w-6 bg-[#FF3D6E]"
+            ? "w-6 bg-[#6C5CE7]"
             : i < episode.episode_number
               ? "w-3 bg-white/50"
               : "w-3 bg-white/20"
@@ -119,7 +119,7 @@ export default function FeedCard({
   return (
     <div
       ref={cardRef}
-      className="snap-card relative w-full h-dvh flex-shrink-0 overflow-hidden bg-[#0A0A0F]"
+      className="snap-card relative w-full h-dvh flex-shrink-0 overflow-hidden bg-[#07070e]"
       onTouchEnd={handleDoubleTap}
       onClick={handleDoubleTap}
     >
@@ -162,7 +162,7 @@ export default function FeedCard({
       {showDoubleTapHeart && (
         <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
           <svg
-            className={`w-24 h-24 text-[#FF3D6E] drop-shadow-2xl transition-all duration-300 ${
+            className={`w-24 h-24 text-[#6C5CE7] drop-shadow-2xl transition-all duration-300 ${
               heartScale ? "scale-110 opacity-100" : "scale-75 opacity-0"
             }`}
             fill="currentColor"
@@ -179,18 +179,18 @@ export default function FeedCard({
           <div className="text-center px-8 animate-[rise_0.6s_ease-out_both]">
             {/* Lock icon */}
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 border border-white/10 flex items-center justify-center">
-              <svg className="w-7 h-7 text-[#E9C682]" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-7 h-7 text-[#FFAB00]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
               </svg>
             </div>
-            <p className="text-sm font-body text-[#9A93A6] mb-1">Episode {episode.episode_number} is locked</p>
-            <p className="text-2xl font-display font-bold text-[#E9C682] mb-4">
+            <p className="text-sm font-body text-[#8b8aa0] mb-1">Episode {episode.episode_number} is locked</p>
+            <p className="text-2xl font-display font-bold text-[#FFAB00] mb-4">
               ${(episode.price_cents / 100).toFixed(2)}
             </p>
-            <button className="px-8 py-3 rounded-full bg-[#FF3D6E] text-white font-body font-semibold text-sm shadow-lg shadow-[#FF3D6E]/25 active:scale-95 transition-transform duration-150">
+            <button className="px-8 py-3 rounded-full bg-[#6C5CE7] text-white font-body font-semibold text-sm shadow-lg shadow-[#6C5CE7]/25 active:scale-95 transition-transform duration-150">
               Unlock Episode
             </button>
-            <p className="text-[11px] text-[#9A93A6]/60 mt-3 font-body">
+            <p className="text-[11px] text-[#8b8aa0]/60 mt-3 font-body">
               One-time purchase. Watch anytime.
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function FeedCard({
           {/* Channel row */}
           <div className="flex items-center gap-2 mb-2.5">
             {/* Channel avatar */}
-            <div className="w-9 h-9 rounded-full overflow-hidden bg-[#1E1E2A] flex items-center justify-center flex-shrink-0 border border-white/10">
+            <div className="w-9 h-9 rounded-full overflow-hidden bg-[#1a1a30] flex items-center justify-center flex-shrink-0 border border-white/10">
               {channel?.avatar_url ? (
                 <img
                   src={channel.avatar_url}
@@ -211,16 +211,16 @@ export default function FeedCard({
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <span className="text-xs font-bold text-[#FF3D6E] font-body">
+                <span className="text-xs font-bold text-[#6C5CE7] font-body">
                   {channel?.name?.charAt(0) || "N"}
                 </span>
               )}
             </div>
-            <span className="text-[13px] font-semibold text-[#F5F2EC] font-body tracking-wide">
-              {channel?.name || "NOVELA"}
+            <span className="text-[13px] font-semibold text-[#f0eef5] font-body tracking-wide">
+              {channel?.name || "Versa TV"}
             </span>
             {channel?.is_verified && (
-              <svg className="w-4 h-4 text-[#FF3D6E] flex-shrink-0" viewBox="0 0 24 24" fill="none">
+              <svg className="w-4 h-4 text-[#6C5CE7] flex-shrink-0" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" fill="currentColor" />
                 <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -228,30 +228,30 @@ export default function FeedCard({
           </div>
 
           {/* Drama title */}
-          <h3 className="font-display text-xl font-bold leading-tight text-[#F5F2EC] mb-1">
+          <h3 className="font-display text-xl font-bold leading-tight text-[#f0eef5] mb-1">
             {drama?.title || "Untitled"}
           </h3>
 
           {/* Episode pill + Genre tag + Duration */}
           <div className="flex items-center gap-2 mb-2 flex-wrap">
             {/* Episode number pill */}
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-[11px] font-body font-medium text-[#F5F2EC]/90 tracking-wide">
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-[11px] font-body font-medium text-[#f0eef5]/90 tracking-wide">
               EP. {episode.episode_number}
             </span>
             {/* Genre tag */}
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#FF3D6E]/15 text-[11px] font-body font-semibold text-[#FF3D6E] uppercase tracking-wider">
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#6C5CE7]/15 text-[11px] font-body font-semibold text-[#6C5CE7] uppercase tracking-wider">
               {drama?.genre}
             </span>
             {/* Duration */}
             {episode.duration_sec && (
-              <span className="text-[11px] text-[#9A93A6] font-body">
+              <span className="text-[11px] text-[#8b8aa0] font-body">
                 {formatDuration(episode.duration_sec)}
               </span>
             )}
           </div>
 
           {/* Synopsis */}
-          <p className="text-[13px] font-body text-[#F5F2EC]/70 leading-relaxed line-clamp-2">
+          <p className="text-[13px] font-body text-[#f0eef5]/70 leading-relaxed line-clamp-2">
             {episode.synopsis}
           </p>
         </div>
@@ -264,7 +264,7 @@ export default function FeedCard({
           <div
             className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 ${
               liked
-                ? "bg-[#FF3D6E] shadow-lg shadow-[#FF3D6E]/30"
+                ? "bg-[#6C5CE7] shadow-lg shadow-[#6C5CE7]/30"
                 : "bg-white/10 backdrop-blur-sm border border-white/10"
             }`}
           >
@@ -280,7 +280,7 @@ export default function FeedCard({
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
           </div>
-          <span className="text-[11px] text-[#F5F2EC]/70 font-body tabular-nums">
+          <span className="text-[11px] text-[#f0eef5]/70 font-body tabular-nums">
             {formatCount(likeCount)}
           </span>
         </button>
@@ -292,7 +292,7 @@ export default function FeedCard({
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
           </div>
-          <span className="text-[11px] text-[#F5F2EC]/70 font-body tabular-nums">
+          <span className="text-[11px] text-[#f0eef5]/70 font-body tabular-nums">
             {formatCount(episode.view_count)}
           </span>
         </button>
@@ -306,7 +306,7 @@ export default function FeedCard({
               <line x1="12" y1="2" x2="12" y2="15" />
             </svg>
           </div>
-          <span className="text-[11px] text-[#F5F2EC]/70 font-body">Share</span>
+          <span className="text-[11px] text-[#f0eef5]/70 font-body">Share</span>
         </button>
 
         {/* Bookmark */}
@@ -317,7 +317,7 @@ export default function FeedCard({
           <div
             className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 ${
               bookmarked
-                ? "bg-[#E9C682] shadow-lg shadow-[#E9C682]/20"
+                ? "bg-[#FFAB00] shadow-lg shadow-[#FFAB00]/20"
                 : "bg-white/10 backdrop-blur-sm border border-white/10"
             }`}
           >
@@ -331,7 +331,7 @@ export default function FeedCard({
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
             </svg>
           </div>
-          <span className="text-[11px] text-[#F5F2EC]/70 font-body">
+          <span className="text-[11px] text-[#f0eef5]/70 font-body">
             {bookmarked ? "Saved" : "Save"}
           </span>
         </button>

@@ -4,8 +4,8 @@ export const SAMPLE_CHANNELS: Channel[] = [
   {
     id: "ch-1",
     owner_id: "user-1",
-    name: "NOVELA Originals",
-    slug: "novela-originals",
+    name: "Versa Originals",
+    slug: "versa-originals",
     description:
       "Premium AI-produced vertical micro-dramas. 80+ originals. 120M+ episode views.",
     avatar_url:
@@ -70,9 +70,9 @@ export const SAMPLE_CHANNELS: Channel[] = [
   },
 ];
 
-// NOVELA Originals + Filmology Labs + celebrity channel titles
+// Versa Originals + Filmology Labs + celebrity channel titles
 export const SAMPLE_DRAMAS: Drama[] = [
-  // --- NOVELA Originals ---
+  // --- Versa Originals ---
   {
     id: "d-1",
     channel_id: "ch-1",

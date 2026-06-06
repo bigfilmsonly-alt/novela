@@ -154,7 +154,7 @@ export default function AIHost() {
       setSegment(data);
     } catch {
       setSegment({
-        greeting: "Hey -- welcome to NOVELA.",
+        greeting: "Hey -- welcome to Versa TV.",
         recap: "We had a packed week. Three new series dropped and the studio is buzzing.",
         trending: "'The Algorithm' finale pulled 48K views in 24 hours.",
         recommendation: "Start with 'Vertical Limit' if you haven't yet. Trust me.",
@@ -189,7 +189,7 @@ export default function AIHost() {
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: "NOVELA Daily Briefing", text });
+        await navigator.share({ title: "Versa TV Daily Briefing", text });
       } catch {
         /* user cancelled */
       }

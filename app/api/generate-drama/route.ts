@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       messages: [
         {
           role: "user",
-          content: `You are a showrunner for NOVELA — the AI-produced vertical micro-drama platform (60-120 second episodes, shot in 9:16 vertical format, produced at Filmology Labs' 21 soundstages in Paterson, NJ). The platform has 120M+ episode views and a 68% completion rate. Hit titles include "The Inheritance Game" and "I Think My Wife Wants to Kill Me."
+          content: `You are a showrunner for Versa TV — the AI-produced vertical micro-drama platform (60-120 second episodes, shot in 9:16 vertical format, produced at Filmology Labs' 21 soundstages in Paterson, NJ). The platform has 120M+ episode views and a 68% completion rate. Hit titles include "The Inheritance Game" and "I Think My Wife Wants to Kill Me."
 
 Given this premise: "${premise}"
 

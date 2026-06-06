@@ -58,9 +58,9 @@ export default function AuthModal({ onClose }: AuthModalProps) {
 
         <div className="text-center mb-6">
           <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-gradient-to-br from-coral to-gold flex items-center justify-center">
-            <span className="font-display font-bold text-xl text-bg">N</span>
+            <span className="font-display font-bold text-lg text-bg">V</span>
           </div>
-          <h3 className="font-display text-xl font-bold">Sign in to NOVELA</h3>
+          <h3 className="font-display text-xl font-bold">Sign in to Versa TV</h3>
           <p className="text-sm text-muted mt-1">
             Magic link — no password needed
           </p>

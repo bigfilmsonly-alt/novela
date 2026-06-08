@@ -86,7 +86,7 @@ export interface Earning {
   created_at: string;
 }
 
-export type TabId = "feed" | "host" | "studio" | "channels";
+export type TabId = "feed" | "host" | "studio" | "channels" | "creators";
 
 export interface GeneratedDrama {
   title: string;
@@ -99,6 +99,11 @@ export interface GeneratedDrama {
     cold_open: string;
     cliffhanger: string;
   }[];
+}
+
+export interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
 }
 
 export interface HostSegment {

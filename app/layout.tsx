@@ -29,7 +29,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="h-dvh overflow-hidden bg-bg text-ink">{children}</body>
+      <body className="phone-viewport text-ink">
+        <div className="phone-device">
+          <div className="phone-screen">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

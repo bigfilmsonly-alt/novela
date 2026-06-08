@@ -7,12 +7,13 @@ import FeedCard from "./FeedCard";
 
 interface FeedProps {
   episodes?: Episode[];
+  onOpenComments?: (title: string) => void;
 }
 
 /* ---- Skeleton shimmer card ---- */
 function FeedSkeleton() {
   return (
-    <div className="snap-card relative w-full h-dvh flex-shrink-0 bg-[#07070e]">
+    <div className="snap-card relative w-full flex-shrink-0 bg-[#07070e]">
       {/* Shimmer background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#101020] via-[#1a1a30] to-[#101020] bg-[length:200%_100%] animate-[shimmer_2s_linear_infinite]" />
       {/* Bottom panel skeleton */}
@@ -39,7 +40,7 @@ function FeedSkeleton() {
   );
 }
 
-export default function Feed({ episodes }: FeedProps) {
+export default function Feed({ episodes, onOpenComments }: FeedProps) {
   const feedRef = useRef<HTMLDivElement>(null);
   const [visibleIndex, setVisibleIndex] = useState(0);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -50,9 +51,7 @@ export default function Feed({ episodes }: FeedProps) {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const cardRefs = useRef<Map<number, HTMLDivElement>>(new Map());
 
-  const feedEpisodes = episodes?.length
-    ? episodes
-    : SAMPLE_EPISODES.filter((e) => !e.locked);
+  const feedEpisodes = episodes?.length ? episodes : SAMPLE_EPISODES;
 
   // ---- IntersectionObserver for visible card tracking ----
   useEffect(() => {
@@ -232,8 +231,10 @@ export default function Feed({ episodes }: FeedProps) {
             <FeedCard
               episode={episode}
               isVisible={i === visibleIndex}
+              shouldLoadVideo={Math.abs(i - visibleIndex) <= 1}
               isFirst={i === 0}
               totalEpisodesInSeries={getEpisodesInSeries(episode.drama_id)}
+              onOpenComments={onOpenComments}
             />
           </div>
         ))}

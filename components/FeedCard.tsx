@@ -7,8 +7,10 @@ import VideoPlayer from "./VideoPlayer";
 interface FeedCardProps {
   episode: Episode;
   isVisible: boolean;
+  shouldLoadVideo?: boolean;
   isFirst?: boolean;
   totalEpisodesInSeries?: number;
+  onOpenComments?: (title: string) => void;
 }
 
 function formatCount(n: number): string {
@@ -32,12 +34,16 @@ function formatDuration(sec: number): string {
 export default function FeedCard({
   episode,
   isVisible,
+  shouldLoadVideo = true,
   isFirst = false,
   totalEpisodesInSeries,
+  onOpenComments,
 }: FeedCardProps) {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(episode.like_count);
   const [bookmarked, setBookmarked] = useState(false);
+  const [showSaveToast, setShowSaveToast] = useState(false);
+  const [showUnlockToast, setShowUnlockToast] = useState(false);
   const [showDoubleTapHeart, setDoubleTapHeart] = useState(false);
   const [heartScale, setHeartScale] = useState(false);
   const lastTap = useRef(0);
@@ -88,13 +94,18 @@ export default function FeedCard({
   }, [triggerLike]);
 
   const handleShare = useCallback(async () => {
+    const shareData = {
+      title: drama?.title || "Check this out on Versa TV",
+      text: episode.synopsis,
+      url: window.location.href,
+    };
     if (navigator.share) {
       try {
-        await navigator.share({
-          title: drama?.title || "Check this out on Versa TV",
-          text: episode.synopsis,
-          url: window.location.href,
-        });
+        await navigator.share(shareData);
+      } catch {}
+    } else {
+      try {
+        await navigator.clipboard.writeText(`${shareData.title}\n${shareData.url}`);
       } catch {}
     }
   }, [drama?.title, episode.synopsis]);
@@ -119,7 +130,7 @@ export default function FeedCard({
   return (
     <div
       ref={cardRef}
-      className="snap-card relative w-full h-dvh flex-shrink-0 overflow-hidden bg-[#07070e]"
+      className="snap-card relative w-full flex-shrink-0 overflow-hidden bg-[#07070e]"
       onTouchEnd={handleDoubleTap}
       onClick={handleDoubleTap}
     >
@@ -135,13 +146,15 @@ export default function FeedCard({
       )}
 
       {/* ---- Video / Gradient Poster layer ---- */}
-      <VideoPlayer
-        src={episode.video_url}
-        posterUrl={posterUrl}
-        gradient={drama?.poster_gradient}
-        isVisible={isVisible}
-        title={episode.title}
-      />
+      {shouldLoadVideo && (
+        <VideoPlayer
+          src={episode.video_url}
+          posterUrl={posterUrl}
+          gradient={drama?.poster_gradient}
+          isVisible={isVisible}
+          title={episode.title}
+        />
+      )}
 
       {/* ---- Cinematic vignette overlays ---- */}
       <div className="absolute inset-0 pointer-events-none">
@@ -187,12 +200,25 @@ export default function FeedCard({
             <p className="text-2xl font-display font-bold text-[#FFAB00] mb-4">
               ${(episode.price_cents / 100).toFixed(2)}
             </p>
-            <button className="px-8 py-3 rounded-full bg-[#6C5CE7] text-white font-body font-semibold text-sm shadow-lg shadow-[#6C5CE7]/25 active:scale-95 transition-transform duration-150">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowUnlockToast(true);
+                setTimeout(() => setShowUnlockToast(false), 2500);
+              }}
+              className="px-8 py-3 rounded-full bg-[#6C5CE7] text-white font-body font-semibold text-sm shadow-lg shadow-[#6C5CE7]/25 active:scale-95 transition-transform duration-150 hover:bg-[#5B4ED6]"
+            >
               Unlock Episode
             </button>
-            <p className="text-[11px] text-[#8b8aa0]/60 mt-3 font-body">
-              One-time purchase. Watch anytime.
-            </p>
+            {showUnlockToast ? (
+              <p className="text-[11px] text-[#00D2FF] mt-3 font-body font-semibold animate-[fade-in_0.2s_ease-out]">
+                Sign in to unlock premium episodes
+              </p>
+            ) : (
+              <p className="text-[11px] text-[#8b8aa0]/60 mt-3 font-body">
+                One-time purchase. Watch anytime.
+              </p>
+            )}
           </div>
         </div>
       )}
@@ -286,14 +312,14 @@ export default function FeedCard({
         </button>
 
         {/* Comments */}
-        <button onClick={(e) => e.stopPropagation()} className="flex flex-col items-center gap-1">
+        <button onClick={(e) => { e.stopPropagation(); onOpenComments?.(drama?.title || episode.title); }} className="flex flex-col items-center gap-1">
           <div className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
           </div>
           <span className="text-[11px] text-[#f0eef5]/70 font-body tabular-nums">
-            {formatCount(episode.view_count)}
+            {formatCount(Math.floor(episode.view_count / 12))}
           </span>
         </button>
 
@@ -311,7 +337,15 @@ export default function FeedCard({
 
         {/* Bookmark */}
         <button
-          onClick={(e) => { e.stopPropagation(); setBookmarked(!bookmarked); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            const next = !bookmarked;
+            setBookmarked(next);
+            if (next) {
+              setShowSaveToast(true);
+              setTimeout(() => setShowSaveToast(false), 1500);
+            }
+          }}
           className="flex flex-col items-center gap-1"
         >
           <div
@@ -336,6 +370,26 @@ export default function FeedCard({
           </span>
         </button>
       </div>
+
+      {/* ---- Save Toast ---- */}
+      {showSaveToast && (
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-40 px-4 py-2 rounded-full bg-[#FFAB00] text-[#07070e] text-xs font-bold font-body animate-[slide-up_0.3s_ease-out] shadow-lg">
+          Saved to your list
+        </div>
+      )}
+
+      {/* ---- Watching Now (social proof) ---- */}
+      {isVisible && !episode.locked && (
+        <div className="absolute top-12 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm animate-[fade-in_0.5s_ease-out_0.5s_both]">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00D2FF] opacity-75" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#00D2FF]" />
+          </span>
+          <span className="text-[9px] text-white/70 font-body tabular-nums">
+            {formatCount((episode.view_count % 800) + 200)} watching
+          </span>
+        </div>
+      )}
 
       {/* ---- Swipe Up Indicator (first card only) ---- */}
       {isFirst && isVisible && (

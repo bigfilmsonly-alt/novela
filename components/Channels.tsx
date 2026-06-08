@@ -33,6 +33,7 @@ export default function Channels({ channels }: ChannelsProps) {
   const [launching, setLaunching] = useState(false);
   const [channelName, setChannelName] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [subscribed, setSubscribed] = useState<Record<string, boolean>>({});
 
   const displayChannels = channels?.length ? channels : SAMPLE_CHANNELS;
 
@@ -170,8 +171,15 @@ export default function Channels({ channels }: ChannelsProps) {
               </div>
 
               {/* Subscribe button */}
-              <button className="mt-1 px-4 py-2 rounded-full border border-coral text-coral text-xs font-bold font-body hover:bg-coral/10 transition-colors flex-shrink-0">
-                Subscribe
+              <button
+                onClick={() => setSubscribed((s) => ({ ...s, [heroChannel.id]: !s[heroChannel.id] }))}
+                className={`mt-1 px-4 py-2 rounded-full text-xs font-bold font-body transition-all flex-shrink-0 active:scale-95 ${
+                  subscribed[heroChannel.id]
+                    ? "bg-coral text-white"
+                    : "border border-coral text-coral hover:bg-coral/10"
+                }`}
+              >
+                {subscribed[heroChannel.id] ? "Subscribed" : "Subscribe"}
               </button>
             </div>
           </div>
@@ -241,8 +249,15 @@ export default function Channels({ channels }: ChannelsProps) {
                 </div>
 
                 {/* Subscribe button */}
-                <button className="mt-1 px-3.5 py-1.5 rounded-full border border-coral text-coral text-xs font-bold font-body hover:bg-coral/10 transition-colors flex-shrink-0">
-                  Subscribe
+                <button
+                  onClick={() => setSubscribed((s) => ({ ...s, [channel.id]: !s[channel.id] }))}
+                  className={`mt-1 px-3.5 py-1.5 rounded-full text-xs font-bold font-body transition-all flex-shrink-0 active:scale-95 ${
+                    subscribed[channel.id]
+                      ? "bg-coral text-white"
+                      : "border border-coral text-coral hover:bg-coral/10"
+                  }`}
+                >
+                  {subscribed[channel.id] ? "Subscribed" : "Subscribe"}
                 </button>
               </div>
             </div>

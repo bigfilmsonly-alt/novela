@@ -225,7 +225,7 @@ export default function CreatorHub({ user, onSignIn }: CreatorHubProps) {
             </button>
 
             <p className="text-[10px] text-[#8b8aa0]/50 font-body mt-4">
-              Powered by Filmology Labs — $250M production facility
+              Powered by Meridian Studios — $250M production facility
             </p>
           </div>
         </div>

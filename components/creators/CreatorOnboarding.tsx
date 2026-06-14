@@ -1261,7 +1261,7 @@ export default function CreatorOnboarding({
                 className="text-[10px] text-[#8b8aa0]/50 font-body text-center leading-relaxed animate-fade-in"
                 style={{ animationDelay: "0.4s" }}
               >
-                Powered by Filmology Labs -- $250M production facility
+                Powered by Meridian Studios -- $250M production facility
                 <br />
                 21 soundstages, LED volume wall, Paterson NJ
               </p>

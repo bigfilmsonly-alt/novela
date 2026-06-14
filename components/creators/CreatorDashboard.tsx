@@ -1071,7 +1071,7 @@ export default function CreatorDashboard({
           <p className="text-[10px] text-[#8b8aa0]/60 font-body leading-relaxed">
             Powered by Versa TV Creator Platform
             <br />
-            Filmology Labs — $250M production facility
+            Meridian Studios — $250M production facility
           </p>
         </div>
       </div>

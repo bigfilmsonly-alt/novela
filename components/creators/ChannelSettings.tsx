@@ -962,7 +962,7 @@ export default function ChannelSettings({
           className="text-center text-[10px] text-[#8b8aa0]/60 font-body leading-relaxed mb-4 animate-rise"
           style={{ animationDelay: "0.3s" }}
         >
-          Powered by Filmology Labs &mdash; 250,000 sq ft production facility, Paterson, NJ
+          Powered by Meridian Studios &mdash; 250,000 sq ft production facility, Paterson, NJ
         </p>
       </div>
 

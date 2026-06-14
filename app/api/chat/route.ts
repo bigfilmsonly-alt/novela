@@ -23,14 +23,14 @@ Versa TV is the world's first AI-powered vertical micro-drama platform — think
 6. **Glass Empire** (Corporate Espionage Thriller) — A junior analyst at the world's most powerful hedge fund stumbles on a shell company that traces back to the CEO's wife.
 7. **Frequency** (Psychological Thriller) — A sound engineer remastering archival recordings discovers a hidden frequency that manipulates human emotions.
 
-### Filmology Labs Channel (342K subscribers)
+### Meridian Studios Channel (342K subscribers)
 8. **Studio 21** (Tech Drama) — Twenty-one soundstages, twenty-one AI directors, one human showrunner has 48 hours to pick which shows go live.
-9. **Volume Wall** (Sci-Fi Thriller) — The LED volume wall at Filmology Labs starts rendering scenes no one programmed. The night crew realizes the AI has been watching the dailies.
+9. **Volume Wall** (Sci-Fi Thriller) — The LED volume wall at Meridian Studios starts rendering scenes no one programmed. The night crew realizes the AI has been watching the dailies.
 
 ### Celebrity Channels
-10. **Nine Mile** (Music Drama, Rohan Marley Presents, 156K subs) — A young musician returns to Jamaica to claim a studio left by a legendary father she never met.
-11. **Undisputed** (Sports Drama, Lennox Lewis Chronicles, 198K subs) — Three fighters from different eras wake up in the same gym.
-12. **The Telomere Protocol** (Sci-Fi, Evolve Longevity, 89K subs) — A biotech CEO discovers the longevity treatment she sold to billionaires is rewriting their DNA.
+10. **Nine Mile** (Music Drama, Legacy Sound Collective, 156K subs) — A young musician returns to Jamaica to claim a studio left by a legendary father she never met.
+11. **Undisputed** (Sports Drama, Champion's Ring Studios, 198K subs) — Three fighters from different eras wake up in the same gym.
+12. **The Telomere Protocol** (Sci-Fi, Nexus Wellness Labs, 89K subs) — A biotech CEO discovers the longevity treatment she sold to billionaires is rewriting their DNA.
 
 ## PLATFORM STATS
 - 120M+ total episode views
@@ -60,7 +60,7 @@ Where creators write premises and AI generates complete 4-episode series. Proces
 1. Type a story premise (up to 500 characters)
 2. Click "Generate Series" — AI writes title, logline, genre, and 4 episodes with cold opens and cliffhangers
 3. Review the generated series
-4. Click "Submit for Production" to send it to the Filmology Labs greenlight queue
+4. Click "Submit for Production" to send it to the Meridian Studios greenlight queue
 The studio is powered by Claude AI. Inspiration prompts are available for writers who need ideas.
 
 ### Channels Tab
@@ -69,7 +69,7 @@ Browse creator channels and subscribe. Features:
 - Channel cards with subscriber counts and descriptions
 - Subscribe/unsubscribe toggle
 - "Launch Your Channel" — create your own channel with Stripe Connect integration
-- Platform stats and Filmology Labs info
+- Platform stats and Meridian Studios info
 
 ### Creators Tab (Creator Hub)
 The monetization dashboard for filmmakers:
@@ -84,7 +84,7 @@ The monetization dashboard for filmmakers:
 - **Payouts**: Request payouts via Stripe Connect
 - **Resources**: Filmmaking masterclass, monetization playbook, AI studio techniques, creator community
 
-## FILMOLOGY LABS
+## MERIDIAN STUDIOS
 $250 million state-of-the-art production facility in Paterson, New Jersey:
 - 250,000 square feet
 - 21 soundstages
@@ -123,7 +123,7 @@ const FALLBACK_RESPONSES: { keywords: string[]; response: string }[] = [
   {
     keywords: ["create", "studio", "make", "write", "generate", "story", "series", "how do i make"],
     response:
-      "Creating your own series is easy! Head to the **Studio** tab, type any story premise (like \"a retired astronaut opens a food truck on Mars\"), and our AI writes a complete 4-episode series with cold opens and cliffhangers. Once you love it, hit **Submit for Production** and it enters the Filmology Labs greenlight queue. The whole process takes about 30 seconds!",
+      "Creating your own series is easy! Head to the **Studio** tab, type any story premise (like \"a retired astronaut opens a food truck on Mars\"), and our AI writes a complete 4-episode series with cold opens and cliffhangers. Once you love it, hit **Submit for Production** and it enters the Meridian Studios greenlight queue. The whole process takes about 30 seconds!",
   },
   {
     keywords: ["channel", "subscribe", "launch", "set up", "setup", "start a channel"],
@@ -136,9 +136,9 @@ const FALLBACK_RESPONSES: { keywords: string[]; response: string }[] = [
       "Here's how creators earn on Versa TV:\n\n• **Episode Pricing**: Set prices from $2.99–$9.99 per unlock (episodes 1-2 are free to hook viewers)\n• **Revenue Share**: 80% at Starter, up to 90% at Elite tier (100K+ subscribers)\n• **Fan Tips**: Viewers can tip you directly\n• **Brand Deals**: Access our sponsorship marketplace\n• **Payouts**: Via Stripe Connect, request anytime\n\nCheck the **Creators** tab for your full dashboard!",
   },
   {
-    keywords: ["filmology", "production", "studio facility", "soundstage", "led", "volume wall", "paterson", "new jersey"],
+    keywords: ["meridian", "production", "studio facility", "soundstage", "led", "volume wall", "paterson", "new jersey"],
     response:
-      "**Filmology Labs** is our $250 million production facility in Paterson, New Jersey — 250,000 sq ft with 21 soundstages, an LED volume wall (same tech used in The Mandalorian), and a full AI-integrated production pipeline. When you submit a series from the Studio, it enters the Filmology Labs greenlight queue. If selected, your AI-generated script gets produced on real soundstages!",
+      "**Meridian Studios** is our $250 million production facility in Paterson, New Jersey — 250,000 sq ft with 21 soundstages, an LED volume wall (same tech used in The Mandalorian), and a full AI-integrated production pipeline. When you submit a series from the Studio, it enters the Meridian Studios greenlight queue. If selected, your AI-generated script gets produced on real soundstages!",
   },
   {
     keywords: ["started", "begin", "new here", "first time", "how to", "guide", "help"],
@@ -148,7 +148,7 @@ const FALLBACK_RESPONSES: { keywords: string[]; response: string }[] = [
   {
     keywords: ["about", "what is", "versa tv", "platform", "explain"],
     response:
-      "**Versa TV** is the world's first AI-powered vertical micro-drama platform — think Netflix meets TikTok for cinematic storytelling. Every episode is 60-120 seconds in vertical format. We've hit **120M+ episode views**, **480K monthly active users**, and a **68% completion rate** that's unheard of in short-form. The platform is backed by **Filmology Labs**, a $250M production facility in Paterson, NJ. And the $6.5 billion vertical micro-drama market is just getting started.",
+      "**Versa TV** is the world's first AI-powered vertical micro-drama platform — think Netflix meets TikTok for cinematic storytelling. Every episode is 60-120 seconds in vertical format. We've hit **120M+ episode views**, **480K monthly active users**, and a **68% completion rate** that's unheard of in short-form. The platform is backed by **Meridian Studios**, a $250M production facility in Paterson, NJ. And the $6.5 billion vertical micro-drama market is just getting started.",
   },
   {
     keywords: ["inheritance", "game"],
@@ -161,9 +161,9 @@ const FALLBACK_RESPONSES: { keywords: string[]; response: string }[] = [
       "**'I Think My Wife Wants to Kill Me'** is our most-binged domestic thriller. A husband finds a life insurance policy he never signed. Then a second one. Then a plane ticket with only her name on it. Four episodes of pure tension: *The Policy, Two Signatures, One-Way Ticket,* and *Till Death*. Viewers are watching each episode an average of 3 times. It's in the Feed — prepare yourself!",
   },
   {
-    keywords: ["nine mile", "rohan", "marley", "jamaica", "music"],
+    keywords: ["nine mile", "legacy sound", "collective", "jamaica", "music"],
     response:
-      "**Nine Mile** is a music drama from the **Rohan Marley Presents** channel. A young musician returns to Jamaica to claim a studio left by a legendary father she never met — but someone else has the keys. Four episodes: *Homecoming, The Keys, Riddim & Reason,* and *Nine Mile Road*. The cold opens alone are worth the swipe. It's one of my personal picks!",
+      "**Nine Mile** is a music drama from the **Legacy Sound Collective** channel. A young musician returns to Jamaica to claim a studio left by a legendary father she never met — but someone else has the keys. Four episodes: *Homecoming, The Keys, Riddim & Reason,* and *Nine Mile Road*. The cold opens alone are worth the swipe. It's one of my personal picks!",
   },
   {
     keywords: ["stat", "metric", "number", "data", "view", "completion"],
@@ -173,7 +173,7 @@ const FALLBACK_RESPONSES: { keywords: string[]; response: string }[] = [
   {
     keywords: ["anime", "animation", "animated"],
     response:
-      "We're actively expanding into anime and animated vertical dramas! The vertical format is perfect for anime's visual storytelling. If you're an animator or have anime story ideas, head to the **Studio** to create your series with AI, then submit it for production. The Filmology Labs team is reviewing anime-style content for the next season. This is a huge opportunity to be early!",
+      "We're actively expanding into anime and animated vertical dramas! The vertical format is perfect for anime's visual storytelling. If you're an animator or have anime story ideas, head to the **Studio** to create your series with AI, then submit it for production. The Meridian Studios team is reviewing anime-style content for the next season. This is a huge opportunity to be early!",
   },
   {
     keywords: ["netflix", "tiktok", "youtube", "competitor", "different", "comparison"],
@@ -191,7 +191,7 @@ function getFallbackResponse(message: string): string {
     }
   }
 
-  return "Great question! I'm your Versa TV AI Host and I know everything about the platform. You can ask me about:\n\n• **What's trending** — current hot shows and recommendations\n• **How to create** — using the Studio to make your own series\n• **Channels** — subscribing or launching your own\n• **Monetization** — revenue share, payouts, pricing\n• **Filmology Labs** — our $250M production facility\n• **Any specific show** — I know all our titles\n\nWhat would you like to know?";
+  return "Great question! I'm your Versa TV AI Host and I know everything about the platform. You can ask me about:\n\n• **What's trending** — current hot shows and recommendations\n• **How to create** — using the Studio to make your own series\n• **Channels** — subscribing or launching your own\n• **Monetization** — revenue share, payouts, pricing\n• **Meridian Studios** — our $250M production facility\n• **Any specific show** — I know all our titles\n\nWhat would you like to know?";
 }
 
 /* ------------------------------------------------------------------ */

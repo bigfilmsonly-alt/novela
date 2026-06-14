@@ -186,37 +186,64 @@ export default function FeedCard({
         </div>
       )}
 
-      {/* ---- Locked Episode Overlay ---- */}
+      {/* ---- Locked Episode Overlay (Coin Economy) ---- */}
       {episode.locked && (
         <div className="absolute inset-0 z-25 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="text-center px-8 animate-[rise_0.6s_ease-out_both]">
-            {/* Lock icon */}
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 border border-white/10 flex items-center justify-center">
-              <svg className="w-7 h-7 text-[#FFAB00]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+            {/* Coin icon */}
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#FFAB00]/20 to-[#6C5CE7]/20 border border-[#FFAB00]/30 flex items-center justify-center">
+              <svg className="w-8 h-8 text-[#FFAB00]" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <text x="12" y="16" textAnchor="middle" fontSize="12" fontWeight="bold" fill="currentColor">C</text>
               </svg>
             </div>
             <p className="text-sm font-body text-[#8b8aa0] mb-1">Episode {episode.episode_number} is locked</p>
-            <p className="text-2xl font-display font-bold text-[#FFAB00] mb-4">
-              ${(episode.price_cents / 100).toFixed(2)}
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <span className="text-2xl font-display font-bold text-[#FFAB00]">
+                {Math.max(30, Math.floor(episode.price_cents / 10))}
+              </span>
+              <span className="text-sm font-body font-medium text-[#FFAB00]/70">coins</span>
+            </div>
+            <p className="text-[11px] text-[#8b8aa0]/50 font-body mb-4">
+              ≈ ${(Math.max(30, Math.floor(episode.price_cents / 10)) * 0.02).toFixed(2)}
             </p>
+
+            {/* Unlock button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 setShowUnlockToast(true);
                 setTimeout(() => setShowUnlockToast(false), 2500);
               }}
-              className="px-8 py-3 rounded-full bg-[#6C5CE7] text-white font-body font-semibold text-sm shadow-lg shadow-[#6C5CE7]/25 active:scale-95 transition-transform duration-150 hover:bg-[#5B4ED6]"
+              className="w-full px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FFAB00] to-[#FF8C00] text-[#07070e] font-body font-bold text-sm shadow-lg shadow-[#FFAB00]/20 active:scale-95 transition-all duration-150 hover:brightness-110 mb-2"
             >
-              Unlock Episode
+              <span className="flex items-center justify-center gap-2">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                </svg>
+                Unlock with Coins
+              </span>
             </button>
+
+            {/* Buy coins CTA */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowUnlockToast(true);
+                setTimeout(() => setShowUnlockToast(false), 2500);
+              }}
+              className="px-6 py-2 rounded-full bg-white/8 backdrop-blur-sm text-white/80 font-body text-xs font-medium border border-white/10 active:scale-95 transition-all"
+            >
+              Get Coins — Starting at $1.99
+            </button>
+
             {showUnlockToast ? (
               <p className="text-[11px] text-[#00D2FF] mt-3 font-body font-semibold animate-[fade-in_0.2s_ease-out]">
-                Sign in to unlock premium episodes
+                Sign in to purchase coins & unlock
               </p>
             ) : (
-              <p className="text-[11px] text-[#8b8aa0]/60 mt-3 font-body">
-                One-time purchase. Watch anytime.
+              <p className="text-[11px] text-[#8b8aa0]/40 mt-3 font-body">
+                Unlock once, watch forever · Season Pass available
               </p>
             )}
           </div>

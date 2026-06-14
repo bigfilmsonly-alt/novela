@@ -18,8 +18,8 @@ export const SAMPLE_CHANNELS: Channel[] = [
   {
     id: "ch-2",
     owner_id: "user-2",
-    name: "Filmology Labs",
-    slug: "filmology-labs",
+    name: "Meridian Studios",
+    slug: "meridian-studios",
     description:
       "21 soundstages. LED volume wall. 250,000 sq ft. Paterson, NJ.",
     avatar_url:
@@ -32,9 +32,9 @@ export const SAMPLE_CHANNELS: Channel[] = [
   {
     id: "ch-3",
     owner_id: "user-3",
-    name: "Rohan Marley Presents",
-    slug: "rohan-marley",
-    description: "Culture, legacy, and the next generation",
+    name: "Legacy Sound Collective",
+    slug: "legacy-sound-collective",
+    description: "Culture, music, and the next generation of storytelling",
     avatar_url:
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop",
     stripe_account_id: null,
@@ -45,8 +45,8 @@ export const SAMPLE_CHANNELS: Channel[] = [
   {
     id: "ch-4",
     owner_id: "user-4",
-    name: "Lennox Lewis Chronicles",
-    slug: "lennox-lewis",
+    name: "Champion's Ring Studios",
+    slug: "champions-ring-studios",
     description: "Champion stories told in vertical format",
     avatar_url:
       "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=200&h=200&fit=crop",
@@ -58,9 +58,9 @@ export const SAMPLE_CHANNELS: Channel[] = [
   {
     id: "ch-5",
     owner_id: "user-5",
-    name: "Evolve Longevity",
-    slug: "evolve-longevity",
-    description: "Science-backed wellness micro-dramas from Miami",
+    name: "Nexus Wellness Labs",
+    slug: "nexus-wellness-labs",
+    description: "Science-backed wellness micro-dramas",
     avatar_url:
       "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=200&h=200&fit=crop",
     stripe_account_id: null,
@@ -70,7 +70,7 @@ export const SAMPLE_CHANNELS: Channel[] = [
   },
 ];
 
-// Versa Originals + Filmology Labs + celebrity channel titles
+// Versa Originals + Meridian Studios + celebrity channel titles
 export const SAMPLE_DRAMAS: Drama[] = [
   // --- Versa Originals ---
   {
@@ -148,7 +148,7 @@ export const SAMPLE_DRAMAS: Drama[] = [
     created_at: "2025-12-01T00:00:00Z",
     channel: SAMPLE_CHANNELS[0],
   },
-  // --- Filmology Labs originals ---
+  // --- Meridian Studios originals ---
   {
     id: "d-6",
     channel_id: "ch-2",
@@ -169,7 +169,7 @@ export const SAMPLE_DRAMAS: Drama[] = [
     channel_id: "ch-2",
     title: "Volume Wall",
     logline:
-      "When the LED volume wall at Filmology Labs starts rendering scenes no one programmed, the night crew realizes the AI has been watching the dailies — and writing its own show.",
+      "When the LED volume wall at Meridian Studios starts rendering scenes no one programmed, the night crew realizes the AI has been watching the dailies — and writing its own show.",
     genre: "Sci-Fi Thriller",
     poster_gradient: "from-blue-900 via-cyan-900 to-black",
     poster_url:
@@ -494,8 +494,8 @@ export const PLATFORM_STATS = {
   totalOriginalTitles: 82,
   genres: ["Romance", "Thriller", "Comedy", "Drama", "Sci-Fi", "Mystery"],
   episodeDurationRange: "60-120 seconds",
-  filmologySquareFt: 250_000,
-  filmologySoundstages: 21,
-  filmologyInvestment: 250_000_000,
+  meridianSquareFt: 250_000,
+  meridianSoundstages: 21,
+  meridianInvestment: 250_000_000,
   marketSize: 6_500_000_000,
 };

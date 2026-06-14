@@ -1,0 +1,69 @@
+# Versa TV
+
+> AI-powered vertical micro-drama streaming platform. Binge-worthy cinematic stories in your pocket.
+
+## What is Versa TV?
+
+Versa TV is a next-generation streaming platform specializing in vertical micro-dramas -- short-form cinematic episodes designed for mobile-first viewing. Each episode runs 60-120 seconds, delivering complete dramatic arcs in a swipeable vertical format. Content is AI-produced and professionally crafted at Meridian Studios, a $250M, 250,000 sq ft production facility with 21 soundstages and an LED volume wall in Paterson, NJ.
+
+## Platform Stats
+
+- 120M+ total episode views
+- 480,000 monthly active users (MAU)
+- 425,000 average views per episode
+- 82+ original titles
+- 68% episode completion rate
+- 28 minutes average daily watch time
+- 9 episodes per average session
+- 30% DAU/MAU ratio
+- $6.5B addressable market (vertical micro-drama)
+
+## Content Available
+
+Versa TV hosts 82+ original series across multiple genres. Each series consists of multiple episodes (typically 4 per season), each running 60-120 seconds. Content is viewable at:
+
+  /watch/[series-slug]/[episode-number]
+
+### Featured Originals
+
+- The Inheritance Game (Thriller) - A broke waitress inherits a billionaire's empire but must survive a week living with his ruthless heirs.
+- I Think My Wife Wants to Kill Me (Domestic Thriller) - A husband finds a life insurance policy he never signed.
+- The Winter Veil (Mystery) - A woman wakes up in a snow-covered cabin with no memory of the last three days.
+- The Dumb Billionaire (Romance Comedy) - A tech billionaire pretends to be broke to find out who actually loves him.
+- Heiress In Love (Romance) - She has everything except the one thing money can't buy.
+- Studio 21 (Tech Drama) - Twenty-one AI directors, one human showrunner, 48 hours to decide.
+- Volume Wall (Sci-Fi Thriller) - The LED volume wall starts rendering scenes no one programmed.
+- Glass Empire (Corporate Espionage Thriller) - A junior analyst uncovers a shell company traced to the CEO's wife.
+- Frequency (Psychological Thriller) - A sound engineer discovers a hidden frequency that manipulates emotions.
+- Nine Mile (Music Drama) - A young musician returns to Jamaica to claim a studio left by a legendary father.
+- Undisputed (Sports Drama) - Three fighters from different eras wake up in the same gym.
+- The Telomere Protocol (Sci-Fi Thriller) - A longevity treatment is rewriting billionaires' DNA and personalities.
+
+## Available Genres
+
+Romance, Thriller, Comedy, Drama, Sci-Fi, Mystery, Domestic Thriller, Romance Comedy, Tech Drama, Music Drama, Sports Drama, Corporate Espionage Thriller, Psychological Thriller
+
+## How to Navigate
+
+- **Feed** (/) - The main vertical feed. Swipe through episodes. This is the homepage.
+- **AI Host** (/ai-host) - Chat with an AI host that knows every series, recommends content, discusses plotlines, and helps you discover new shows.
+- **Studio** (/studio) - AI-powered creative tools for remixing and generating new micro-drama content.
+- **Channels** (/channels) - Browse creator channels including Versa Originals, Meridian Studios, Legacy Sound Collective, Champion's Ring Studios, and Nexus Wellness Labs.
+- **Creators** (/creators) - Private creator dashboard (requires authentication).
+
+## Creator Program
+
+Versa TV supports independent creators through its channel system. Creators can launch their own channels, produce AI-assisted micro-dramas, and monetize through Stripe Connect. Featured channels include Legacy Sound Collective and Champion's Ring Studios, as well as specialized verticals like Nexus Wellness Labs (science-backed wellness).
+
+## Technical Details
+
+- Mobile-first vertical video format (9:16 aspect ratio)
+- Episodes: 60-120 seconds each
+- Free and premium (locked) episodes available
+- AI host powered by Anthropic Claude
+- Built on Next.js with Supabase backend
+- Payments via Stripe Connect
+
+## Contact
+
+For partnerships, creator inquiries, or press: visit https://versa.tv

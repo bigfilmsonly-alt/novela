@@ -150,7 +150,7 @@ export default function Studio() {
           </h2>
           <p className="text-[15px] text-muted leading-relaxed">
             Describe any story idea. Our AI writes a complete 4-episode
-            vertical drama — ready for production at Filmology Labs.
+            vertical drama — ready for production at Meridian Studios.
           </p>
         </header>
 
@@ -388,7 +388,7 @@ export default function Studio() {
                 <div className="bg-bg2 rounded-xl border border-bg3 p-4 mb-4">
                   <p className="text-xs text-muted leading-relaxed">
                     <span className="font-bold text-ink">What happens next:</span>{" "}
-                    Your series enters the Filmology Labs greenlight queue.
+                    Your series enters the Meridian Studios greenlight queue.
                     Our team reviews submissions weekly. If selected, it goes
                     into production on our LED volume stages in Paterson, NJ.
                   </p>
